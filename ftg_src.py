@@ -94,7 +94,7 @@ class ftg(Node):
             basethrottle= 0.5 * (centeravg + 0.01) / 10.0
         else:
             # Probably not straight, change reactively based on distance
-            basethrottle =  0.15 if mindistance > 0.6 else 0.3 if mindistance > 0.6 else 0.2 if mindistance > 0.4 else 0.15 if mindistance > 0.12 else 0.04 if mindistance > 0.09 else 0.01
+            basethrottle =  0.15 if mindistance > 0.6 else 0.3 if mindistance > 0.5 else 0.2 if mindistance > 0.4 else 0.15 if mindistance > 0.12 else 0.04 if mindistance > 0.09 else 0.01
         # Reduce throttle based on the steering angle and a decay 
         decay = 0.9
         throttle = decay * basethrottle * (1 - abs(steeringangle) + 0.01 / 1.0)
